@@ -11,6 +11,10 @@ body {
   padding: 0 50px;
 }
 
+.menu {
+  display: none;
+}
+
 .nav__list {
   display: flex;
   justify-content: flex-end;
@@ -40,6 +44,7 @@ body {
 
 .images {
   margin-top: 10px;
+  margin-right: 50px;
 }
 
 .nav__link {
@@ -69,4 +74,57 @@ body {
   height: 4px;
   content: "";
   border-radius: 8px;
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav__item:last-child {
+    margin-right: 10px;
+  }
+  
+  .nav__item:first-child {
+    margin-left: 10px;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    z-index: 1;
+    top: 15px;
+    right: 50px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .menu--toggled {
+    transform: rotate(90deg);
+  }
+
+  .navlist__active {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,1);
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    /* background-color: olive; */
+  }
 }
